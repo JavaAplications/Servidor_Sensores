@@ -54,10 +54,10 @@ public class ClaseServidor extends Thread{
 		         
 	          
 	             while (continuar) { 
-		        	  System.out.println("Esperando cliente:");
+		        	 // System.out.println("Esperando cliente:");
 		        	  
 		        	  socketclient = sk.accept();// se queda a la espera de un cliente
-		              System.out.println("Ingreso Cliente por el Puerto:"+socketclient.getPort());
+		              //System.out.println("Ingreso Cliente por el Puerto:"+socketclient.getPort());
 		             Cliente_Hilo= new Servidor_Hilo(socketclient,con);
 		             Cliente_Hilo.start();
 		         }
