@@ -53,7 +53,7 @@ public void Update_Status_Sensor(int ID_Sensor,boolean Estado){
 	
 		PreparedStatement pst;
 		try {
-			pst = con.prepareStatement("UPDATE status_sensor SET Status=(?) WHERE ID_Sensor="+ID_Sensor);
+			pst = con.prepareStatement("UPDATE status_sensor SET Estado=(?) WHERE ID_Sensor="+ID_Sensor);
 			
 			pst.setBoolean(1,Estado);
 			
@@ -114,7 +114,7 @@ public int Consultar_Lugares(int ID_Cartel)
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		
-			 System.out.println("error al consultar: "+IP);
+			 System.out.println("error al consultar: "+ID_Cartel);
 	}
 	Desconectar();
 	return Cant_Lugares;

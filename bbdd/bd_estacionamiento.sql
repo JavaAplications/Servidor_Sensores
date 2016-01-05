@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-01-2016 a las 16:38:34
+-- Tiempo de generación: 05-01-2016 a las 19:35:09
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.6.15
 
@@ -31,6 +31,14 @@ CREATE TABLE `carteles` (
   `IP_Cartel` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `carteles`
+--
+
+INSERT INTO `carteles` (`ID_Cartel`, `IP_Cartel`) VALUES
+(1, '127.0.0.1'),
+(2, '192.168.0.100');
+
 -- --------------------------------------------------------
 
 --
@@ -44,6 +52,14 @@ CREATE TABLE `eventos` (
   `Estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `eventos`
+--
+
+INSERT INTO `eventos` (`ID_Evento`, `ID_Sensor`, `Horario`, `Estado`) VALUES
+(1, 1, '2016-01-05 15:56:32', 0),
+(2, 1, '2016-01-05 15:56:41', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -55,6 +71,14 @@ CREATE TABLE `sensores` (
   `IP_Sensor` varchar(30) NOT NULL,
   `ID_Cartel` int(15) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla Sensores';
+
+--
+-- Volcado de datos para la tabla `sensores`
+--
+
+INSERT INTO `sensores` (`ID_Sensor`, `IP_Sensor`, `ID_Cartel`) VALUES
+(1, '127.0.0.1', 1),
+(2, '192.168.0.100', 2);
 
 -- --------------------------------------------------------
 
@@ -105,12 +129,17 @@ ALTER TABLE `status_sensor`
 -- AUTO_INCREMENT de la tabla `carteles`
 --
 ALTER TABLE `carteles`
-  MODIFY `ID_Cartel` int(15) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Cartel` int(15) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT de la tabla `eventos`
+--
+ALTER TABLE `eventos`
+  MODIFY `ID_Evento` int(15) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `sensores`
 --
 ALTER TABLE `sensores`
-  MODIFY `ID_Sensor` int(15) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_Sensor` int(15) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Restricciones para tablas volcadas
 --
